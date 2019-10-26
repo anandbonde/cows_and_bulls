@@ -1,1 +1,1 @@
-web: gunicorn wsgi.py
+web: gunicorn cows_and_bulls.py
