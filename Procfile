@@ -1,1 +1,1 @@
-web: gunicorn myproject.wsgi
+web: gunicorn cows_and_bulls.py
