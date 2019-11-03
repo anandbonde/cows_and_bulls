@@ -45,6 +45,10 @@
                     }
                     //reset the form after successful submit
                     $("#form")[0].reset();
+                    const autofocusedElements = document.querySelectorAll('input[autofocus]');
+                    if (autofocusedElements.length) {
+                        autofocusedElements[0].focus();
+                    }
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
                     alert(xhr.responseJSON.error.word[0]);
@@ -69,8 +73,7 @@
             It is a game that may date back a century or more which uses numbers or words. It is played by
             two opponents.
         </p>
-        <a class="btn btn-primary" target="_blank" href="https://en.wikipedia.org/wiki/Bulls_and_Cows"
-           role="button">
+        <a class="btn btn-primary" target="_blank" href="https://en.wikipedia.org/wiki/Bulls_and_Cows" role="button">
             Learn more
         </a>
     </div>
