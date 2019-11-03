@@ -41,7 +41,7 @@
                                  + '</td><td>'
                                  + response.number_of_bulls
                                  + '</td></tr>';
-                        $('#records_table').append(trHTML);
+                        $('#records_table tbody').prepend(trHTML);
                     }
                     //reset the form after successful submit
                     $("#form")[0].reset();
@@ -52,9 +52,6 @@
             });
        });
     });
-
-
-
     </script>
     {% endblock %}
 </head>
@@ -84,10 +81,11 @@
             <input type="submit" class="btn btn-success"/>
         </form>
     </div>
-    <div class="container" align="right">
-        <table class="table-sm table-hover" id="records_table">
+    <br>
+    <div class="container">
+        <table class="table table-hover" id="records_table">
             <thead>
-            <tr class="header">
+            <tr class="header" align="center">
                 <th scope="col">#</th>
                 <th scope="col">Word</th>
                 <th scope="col">#Cows</th>
