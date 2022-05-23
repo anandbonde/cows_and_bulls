@@ -36,11 +36,9 @@ def ajax_handler_for_word_submit(request):
             seed_word = request.session.get('seed_word')
             number_of_attempts = request.session.get('number_of_attempts')
             request.session['number_of_attempts'] = number_of_attempts+1
-            print(number_of_attempts, seed_word, attempted_word)
             word_parser = WordParser(word_len=4, dictionary=words.words())
             cows_and_bulls_computer = CowsAndBullsComputer(word_parser, GamePolicy(max_number_of_tries=1))
             number_of_cows, number_of_bulls, is_winner = cows_and_bulls_computer.compute(seed_word, attempted_word)
-            print(number_of_attempts, seed_word, attempted_word, number_of_cows, number_of_bulls, is_winner)
             return JsonResponse({
                 "success": True,
                 "original_word": seed_word if number_of_attempts == 14 else None,
