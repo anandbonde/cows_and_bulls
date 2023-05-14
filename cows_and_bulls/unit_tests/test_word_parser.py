@@ -7,7 +7,7 @@ class TestWordParser:
     @classmethod
     def setup_class(cls):
         from nltk.corpus import words
-        from src.cows_and_bulls.game_logic.word_parser import WordParser
+        from cows_and_bulls.game_logic.word_parser import WordParser
         cls.word_parser = WordParser(word_len=TestWordParser.word_len, dictionary=words.words())
 
     @pytest.mark.parametrize("word", [

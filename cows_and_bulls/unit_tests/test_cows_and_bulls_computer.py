@@ -1,6 +1,6 @@
 import pytest
 
-from src.cows_and_bulls.game_logic.cows_and_bulls_computer import CowsAndBullsComputer
+from cows_and_bulls.game_logic.cows_and_bulls_computer import CowsAndBullsComputer
 
 
 class TestCowsAndBullsComputer:
@@ -9,9 +9,9 @@ class TestCowsAndBullsComputer:
     @classmethod
     def setup_class(cls):
         from nltk.corpus import words
-        from src.cows_and_bulls.game_logic.word_parser import WordParser
+        from cows_and_bulls.game_logic.word_parser import WordParser
         cls.word_parser = WordParser(TestCowsAndBullsComputer.word_len, dictionary=words.words())
-        from src.cows_and_bulls.game_logic.game_policy import GamePolicy
+        from cows_and_bulls.game_logic.game_policy import GamePolicy
         cls.game_policy = GamePolicy()
 
     @pytest.mark.parametrize("word1, word2, expected_number_of_cows, expected_number_of_bulls, expected_game_result", [

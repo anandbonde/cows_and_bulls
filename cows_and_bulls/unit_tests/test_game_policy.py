@@ -1,6 +1,6 @@
 import pytest
 
-from src.cows_and_bulls.game_logic.game_policy import GamePolicy
+from cows_and_bulls.game_logic.game_policy import GamePolicy
 
 
 class TestGamePolicy:
